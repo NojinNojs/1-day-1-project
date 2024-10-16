@@ -13,8 +13,12 @@ This project consists of a series of daily projects, each with a specific focus 
 
 1. **Day 1: Hello World**
    - Description: Buat halaman web sederhana yang menampilkan "Hello World" dengan PHP dan JavaScript.
-   - Technologies: HTML, CSS, JavaScript
+   - Technologies: HTML, CSS, JavaScript, PHP
    - [Link to Project](Pemula-1-20/day-1-Hello-World)
+2. **Day 1: Simple Calculator**
+   - Description: Kalkulator sederhana untuk perkalian, pengurangan, pembagian, dan pertambahan.
+   - Technologies: HTML, CSS, JavaScript
+   - [Link to Project](Pemula-1-20/day-2-Simple-Calculator/)
 
 ## How to Use
 1. Clone this repository:

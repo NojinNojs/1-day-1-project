@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple calculator</title>
+    <link
+      rel="icon"
+      href="https://upload.wikimedia.org/wikipedia/commons/3/3b/Calculator_icon_Apple.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .calculator {
+        width: 320px;
+        padding: 1rem;
+        background-color: #333;
+        border-radius: 1rem;
+      }
+      .calculator .screen {
+        background-color: #222;
+        color: #fff;
+        padding: 1rem;
+        font-size: 2rem;
+        border-radius: 0.5rem;
+        text-align: right;
+      }
+      .button {
+        background-color: #555;
+        color: #fff;
+        font-size: 1.5rem;
+        padding: 1rem;
+        border-radius: 50%;
+        margin: 0.5rem;
+        text-align: center;
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s, transform 0.1s;
+      }
+      .button:hover {
+        background-color: #666;
+      }
+      .button:active {
+        transform: scale(0.95);
+      }
+      .button.operation {
+        background-color: #ff9500;
+      }
+      .button.operation:hover {
+        background-color: #ffb84d;
+      }
+      .button.zero {
+        width: 8.5rem;
+      }
+    </style>
+  </head>
+  <body class="flex flex-col items-center h-screen bg-gray-900">
+
+    <!-- Calculator Container -->
+    <div class="calculator mx-auto my-auto">
+      <div id="screen" class="screen">0</div>
+      <div class="grid grid-cols-4 gap-2 mt-4">
+        <button class="button" onclick="clearScreen()">AC</button>
+        <button class="button" onclick="backspace()">←</button>
+        <button class="button" onclick="inputOperator('/')">÷</button>
+        <button class="button operation" onclick="inputOperator('*')">×</button>
+
+        <button class="button" onclick="inputNumber(7)">7</button>
+        <button class="button" onclick="inputNumber(8)">8</button>
+        <button class="button" onclick="inputNumber(9)">9</button>
+        <button class="button operation" onclick="inputOperator('-')">−</button>
+
+        <button class="button" onclick="inputNumber(4)">4</button>
+        <button class="button" onclick="inputNumber(5)">5</button>
+        <button class="button" onclick="inputNumber(6)">6</button>
+        <button class="button operation" onclick="inputOperator('+')">+</button>
+
+        <button class="button" onclick="inputNumber(1)">1</button>
+        <button class="button" onclick="inputNumber(2)">2</button>
+        <button class="button" onclick="inputNumber(3)">3</button>
+        <button class="button operation" onclick="calculate()">=</button>
+
+        <button
+          class="button zero rounded-lg col-span-2"
+          style="border-radius: 1rem; margin-right: 0.5rem"
+          onclick="inputNumber(0)"
+        >
+          0
+        </button>
+        <button
+          class="button col-span-1"
+          style="margin-left: 0.5rem"
+          onclick="inputNumber('.')"
+        >
+          .
+        </button>
+        <button
+          class="button operation col-span-1"
+          onclick="my_modal_1.showModal()"
+        >
+          ⚙️
+        </button>
+      </div>
+    </div>
+
+    <!-- Settings Panel Modal -->
+    <dialog id="my_modal_1" class="modal">
+      <div class="modal-box">
+        <h3 class="text-lg font-bold">Settings</h3>
+
+        <label class="block mt-4">
+          <span class="text-gray-200">Custom Output Message (for "="):</span>
+          <input
+            id="customMessage"
+            type="text"
+            placeholder="Enter your message"
+            class="input input-bordered w-full mt-2 bg-gray-700 text-white"
+          />
+        </label>
+
+        <label class="inline-flex items-center mt-4">
+          <input
+            type="checkbox"
+            id="toggleMessage"
+            class="form-checkbox"
+            onchange="toggleCustomMessage()"
+          />
+          <span class="ml-2 text-gray-200">Enable Custom Message</span>
+        </label>
+
+        <div class="modal-action">
+          <button class="btn btn-primary mt-4" onclick="applyCustomMessage()">
+            Apply
+          </button>
+          <form method="dialog">
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
+    <script>
+      let currentInput = "0";
+      let operator = "";
+      let previousInput = "";
+      let customMessage = localStorage.getItem("customMessage") || "";
+      let isMessageEnabled = localStorage.getItem("isMessageEnabled") === "true";
+
+      // Load settings from local storage
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("customMessage").value = customMessage;
+        document.getElementById("toggleMessage").checked = isMessageEnabled;
+        toggleCustomMessage(); // Set the input state based on the checkbox
+      });
+
+      // Formatting function to add commas to large numbers
+      function formatNumber(num) {
+        if (!isNaN(num)) {
+          return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+        return num;
+      }
+
+      function updateScreen() {
+        const screen = document.getElementById("screen");
+        screen.textContent = formatNumber(currentInput);
+      }
+
+      function inputNumber(num) {
+        if (currentInput === "0") {
+          currentInput = num.toString();
+        } else {
+          currentInput += num.toString();
+        }
+        updateScreen();
+      }
+
+      function inputOperator(op) {
+        previousInput = currentInput;
+        operator = op;
+        currentInput = "0";
+      }
+
+      function calculate() {
+        let result;
+        const prev = parseFloat(previousInput.replace(/,/g, ""));
+        const curr = parseFloat(currentInput.replace(/,/g, ""));
+
+        switch (operator) {
+          case "+":
+            result = prev + curr;
+            break;
+          case "-":
+            result = prev - curr;
+            break;
+          case "*":
+            result = prev * curr;
+            break;
+          case "/":
+            result = prev / curr;
+            break;
+          default:
+            return;
+        }
+
+        if (isMessageEnabled && customMessage) {
+          currentInput = customMessage; // Use custom message instead of result
+        } else {
+          currentInput = result.toString();
+        }
+        updateScreen();
+      }
+
+      function clearScreen() {
+        currentInput = "0";
+        operator = "";
+        previousInput = "";
+        updateScreen();
+      }
+
+      function backspace() {
+        currentInput = currentInput.slice(0, -1);
+        if (currentInput === "") {
+          currentInput = "0";
+        }
+        updateScreen();
+      }
+
+      function applyCustomMessage() {
+        customMessage = document.getElementById("customMessage").value;
+        isMessageEnabled = document.getElementById("toggleMessage").checked;
+        localStorage.setItem("customMessage", customMessage);
+        localStorage.setItem("isMessageEnabled", isMessageEnabled);
+        alert("Custom message applied: " + customMessage);
+      }
+
+      function closeModal() {
+        document.getElementById("my_modal_1").close();
+      }
+
+      function toggleCustomMessage() {
+        const customMessageInput = document.getElementById("customMessage");
+        customMessageInput.disabled =
+          !document.getElementById("toggleMessage").checked;
+      }
+
+      // Close the modal when the user clicks anywhere outside of it
+      window.onclick = function (event) {
+        const modal = document.getElementById("my_modal_1");
+        if (event.target === modal) {
+          closeModal();
+        }
+      };
+    </script>
+  </body>
+</html>
