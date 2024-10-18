@@ -19,6 +19,10 @@ This project consists of a series of daily projects, each with a specific focus 
    - Description: A simple calculator for multiplication, subtraction, division, and addition.
    - Technologies: HTML, CSS, JavaScript
    - [Link to Project](Pemula-1-20/day-2-Simple-Calculator/)
+3. **Day 3: Nojin Notes/Form Submission**
+   - Description: A simple PHP project where users can add notes through a basic form and display them on the main page. The project is built using PHP and stores notes in JSON format.
+   - Technologies: HTML, CSS, JavaScript, PHP
+   - [Link to Project](Pemula-1-20/day-3-Form-Submission)
 
 ## How to Use
 1. Clone this repository:
