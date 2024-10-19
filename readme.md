@@ -23,6 +23,14 @@ This project consists of a series of daily projects, each with a specific focus 
    - Description: A simple PHP project where users can add notes through a basic form and display them on the main page. The project is built using PHP and stores notes in JSON format.
    - Technologies: HTML, CSS, JavaScript, PHP
    - [Link to Project](Pemula-1-20/day-3-Form-Submission)
+4. **Day 4: To-Do List**
+   - Description: A simple To-Do List application that allows users to add, edit, and delete tasks. The application stores tasks in the browser's local storage, ensuring that tasks persist even after the page is refreshed.
+   - Technologies: HTML, CSS, JavaScript
+   - [Link to Project](Pemula-1-20/day-4-To-Do-List)
+5. **Day 5: Random Quote Generator**
+   - Description: A web application that generates inspiring quotes from various categories and allows users to share them on social media.
+   - Technologies: HTML, CSS (Tailwind CSS), JavaScript
+   - [Link to Project](Pemula-1-20/day-5-Random-Quote-Generator)
 
 ## How to Use
 1. Clone this repository:

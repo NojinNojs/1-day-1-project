@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Generate inspiring quotes on various topics including programming, photography, and self-development. Share your favorite quotes easily!" />
+    <meta name="keywords" content="quote generator, inspirational quotes, programming quotes, photography quotes, self-development quotes, hijrah quotes" />
+    <meta name="author" content="Nojin" />
+    <title>Quote Generator | Nojin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="canonical" href="https://yourwebsite.com" />
+    <meta property="og:title" content="Quote Generator | Nojin" />
+    <meta property="og:description" content="Generate inspiring quotes on various topics and share them with your friends!" />
+    <meta property="og:image" content="https://yourwebsite.com/image.jpg" />
+    <meta property="og:url" content="https://yourwebsite.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Quote Generator | Nojin" />
+    <meta name="twitter:description" content="Generate inspiring quotes on various topics and share them with your friends!" />
+    <meta name="twitter:image" content="https://yourwebsite.com/image.jpg" />
+  </head>
+  <body class="font-sans transition-colors duration-200 ease-in-out">
+    <div id="app" class="min-h-screen flex items-center justify-center p-4">
+      <div
+        class="max-w-xl w-full bg-white rounded-lg shadow-lg p-8 transition-colors duration-200 ease-in-out"
+      >
+        <div class="flex justify-between mb-6">
+          <button
+            id="languageToggle"
+            class="text-sm px-3 py-1 rounded bg-gray-200 text-gray-800"
+          >
+            EN
+          </button>
+        </div>
+        <h1
+          id="title"
+          class="text-3xl font-bold text-center mb-6 text-gray-800"
+        >
+          Quote Generator
+        </h1>
+        <div class="mb-4">
+          <label for="categorySelect" class="block text-gray-700"
+            >Select Category:</label
+          >
+          <select
+            id="categorySelect"
+            class="w-full p-2 border border-gray-300 rounded"
+          >
+            <option value="all">All</option>
+            <option value="programming">Programming</option>
+            <option value="photography">Photography</option>
+            <option value="selfDevelopment">Self Development</option>
+            <option value="hijrah">Hijrah</option>
+          </select>
+        </div>
+        <div
+          id="quoteDisplay"
+          class="text-xl text-gray-800 italic mb-4 min-h-[100px] flex flex-col items-center justify-center text-center transition-opacity duration-200 ease-in-out"
+        >
+          <span id="quoteText">Click the button to display a quote</span>
+          <div id="quoteSource" class="text-sm text-gray-600 mt-2"></div>
+        </div>
+        <button
+          id="newQuote"
+          class="w-full bg-black text-white py-3 px-6 rounded-lg font-semibold transition duration-300 ease-in-out hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 mb-4"
+        >
+          Generate Quote
+        </button>
+        <div
+          class="flex justify-center space-x-4"
+          id="actionButtons"
+          style="display: none"
+        >
+          <button
+            id="copyQuote"
+            class="text-gray-600 hover:text-gray-800 transition duration-200"
+            title="Copy Quote"
+          >
+            <i class="far fa-copy"></i>
+          </button>
+          <button
+            id="shareTwitter"
+            class="text-gray-600 hover:text-gray-800 transition duration-200"
+            title="Share on Twitter"
+          >
+            <i class="fab fa-twitter"></i>
+          </button>
+          <button
+            id="shareWhatsApp"
+            class="text-gray-600 hover:text-gray-800 transition duration-200"
+            title="Share on WhatsApp"
+          >
+            <i class="fab fa-whatsapp"></i>
+          </button>
+          <button
+            id="shareInstagram"
+            class="text-gray-600 hover:text-gray-800 transition duration-200"
+            title="Share on Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const quotes = {
+        en: {
+          all: [
+            {
+              text: "The only way to do great work is to love what you do.",
+              source: "- Steve Jobs",
+            },
+            {
+              text: "Your time is limited, don't waste it living someone else's life.",
+              source: "- Steve Jobs",
+            },
+            {
+              text: "Code is like humor. When you have to explain it, it's bad.",
+              source: "- Cory House",
+            },
+            {
+              text: "The best way to predict the future is to create it.",
+              source: "- Peter Drucker",
+            },
+            {
+              text: "Programming isn't about what you know; it's about what you can figure out.",
+              source: "- Chris Pine",
+            },
+            {
+              text: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+              source: "- Martin Fowler",
+            },
+            {
+              text: "Photography is the story I fail to put into words.",
+              source: "- Destin Sparks",
+            },
+            {
+              text: "A picture is a secret about a secret, the more it tells you the less you know.",
+              source: "- Diane Arbus",
+            },
+            {
+              text: "In photography, there is a reality so subtle that it becomes more real than reality.",
+              source: "- Alfred Stieglitz",
+            },
+            {
+              text: "The greatest wealth is to live content with little.",
+              source: "- Plato",
+            },
+            {
+              text: "The journey of a thousand miles begins with one step.",
+              source: "- Lao Tzu",
+            },
+            {
+              text: "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+              source: "- Winston Churchill",
+            },
+            {
+              text: "Happiness is not something ready-made. It comes from your own actions.",
+              source: "- Dalai Lama",
+            },
+            {
+              text: "And whoever fears Allah - He will make for him a way out.",
+              source: "(Al-Qur'an, Surah At-Talaq, 65:2)",
+            },
+            {
+              text: "So remember Me; I will remember you. And be grateful to Me and do not deny Me.",
+              source: "(Al-Qur'an, Surah Al-Baqarah, 2:152)",
+            },
+            {
+              text: "Indeed, Allah will not change the condition of a people until they change what is in themselves.",
+              source: "(Al-Qur'an, Surah Ar-Ra'd, 13:11)",
+            },
+            {
+              text: "And seek help through patience and prayer. Indeed, it is difficult except for the humbly submissive [to Allah].",
+              source: "(Al-Qur'an, Surah Al-Baqarah, 2:45)",
+            },
+            {
+              text: "O mankind, you are those in need of Allah, while Allah is the Free of need, the Praiseworthy.",
+              source: "(Al-Qur'an, Surah Fatir, 35:15)",
+            },
+            {
+              text: "Take advantage of five matters before five: your youth before you become old, your health before you fall sick, your wealth before you become poor, your free time before you become busy, and your life before your death.",
+              source: "(Hadith, narrated by Ibn Abbas, Al-Hakim)",
+            },
+            {
+              text: "Do not lose hope, nor be sad. You will surely be victorious if you are true believers.",
+              source: "(Al-Qur'an, Surah Ali Imran, 3:139)",
+            },
+            {
+              text: "A servant of Allah will remain standing on the Day of Judgment until he is questioned about his time and how he used it.",
+              source: "(Hadith, narrated by At-Tirmidhi)",
+            },
+            {
+              text: "Hijrah is not about leaving your country, but leaving what Allah has prohibited.",
+              source: "- Shaykh Ibn Baz",
+            },
+            {
+              text: "Indeed, those who have believed and those who have emigrated and fought in the cause of Allah - it is they who hope for Allah’s mercy.",
+              source: "(Al-Qur'an, Surah Al-Baqarah, 2:218)",
+            },
+          ],
+          programming: [
+            {
+              text: "The only way to do great work is to love what you do.",
+              source: "- Steve Jobs",
+            },
+            {
+              text: "Your time is limited, don't waste it living someone else's life.",
+              source: "- Steve Jobs",
+            },
+            {
+              text: "Code is like humor. When you have to explain it, it's bad.",
+              source: "- Cory House",
+            },
+            {
+              text: "The best way to predict the future is to create it.",
+              source: "- Peter Drucker",
+            },
+            {
+              text: "Programming isn't about what you know; it's about what you can figure out.",
+              source: "- Chris Pine",
+            },
+            {
+              text: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+              source: "- Martin Fowler",
+            },
+          ],
+          photography: [
+            {
+              text: "Photography is the story I fail to put into words.",
+              source: "- Destin Sparks",
+            },
+            {
+              text: "A picture is a secret about a secret, the more it tells you the less you know.",
+              source: "- Diane Arbus",
+            },
+            {
+              text: "In photography, there is a reality so subtle that it becomes more real than reality.",
+              source: "- Alfred Stieglitz",
+            },
+          ],
+          selfDevelopment: [
+            {
+              text: "The greatest wealth is to live content with little.",
+              source: "- Plato",
+            },
+            {
+              text: "The journey of a thousand miles begins with one step.",
+              source: "- Lao Tzu",
+            },
+            {
+              text: "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+              source: "- Winston Churchill",
+            },
+            {
+              text: "Happiness is not something ready-made. It comes from your own actions.",
+              source: "- Dalai Lama",
+            },
+            {
+              text: "Believe you can and you're halfway there.",
+              source: "- Theodore Roosevelt",
+            },
+          ],
+          hijrah: [
+            {
+              text: "And whoever fears Allah - He will make for him a way out.",
+              source: "(Al-Qur'an, Surah At-Talaq, 65:2)",
+            },
+            {
+              text: "So remember Me; I will remember you. And be grateful to Me and do not deny Me.",
+              source: "(Al-Qur'an, Surah Al-Baqarah, 2:152)",
+            },
+            {
+              text: "Indeed, Allah will not change the condition of a people until they change what is in themselves.",
+              source: "(Al-Qur'an, Surah Ar-Ra'd, 13:11)",
+            },
+            {
+              text: "And seek help through patience and prayer. Indeed, it is difficult except for the humbly submissive [to Allah].",
+              source: "(Al-Qur'an, Surah Al-Baqarah, 2:45)",
+            },
+            {
+              text: "O mankind, you are those in need of Allah, while Allah is the Free of need, the Praiseworthy.",
+              source: "(Al-Qur'an, Surah Fatir, 35:15)",
+            },
+            {
+              text: "Take advantage of five matters before five: your youth before you become old, your health before you fall sick, your wealth before you become poor, your free time before you become busy, and your life before your death.",
+              source: "(Hadith, narrated by Ibn Abbas, Al-Hakim)",
+            },
+            {
+              text: "Do not lose hope, nor be sad. You will surely be victorious if you are true believers.",
+              source: "(Al-Qur'an, Surah Ali Imran, 3:139)",
+            },
+            {
+              text: "A servant of Allah will remain standing on the Day of Judgment until he is questioned about his time and how he used it.",
+              source: "(Hadith, narrated by At-Tirmidhi)",
+            },
+            {
+              text: "Hijrah is not about leaving your country, but leaving what Allah has prohibited.",
+              source: "- Shaykh Ibn Baz",
+            },
+            {
+              text: "Indeed, those who have believed and those who have emigrated and fought in the cause of Allah - it is they who hope for Allah’s mercy.",
+              source: "(Al-Qur'an, Surah Al-Baqarah, 2:218)",
+            },
+          ],
+        },
+        id: {
+          all: [
+            {
+              text: "Satu-satunya cara untuk melakukan pekerjaan hebat adalah mencintai apa yang Anda lakukan.",
+              source: "- Steve Jobs",
+            },
+            {
+              text: "Waktu Anda terbatas, jangan sia-siakan dengan menjalani hidup orang lain.",
+              source: "- Steve Jobs",
+            },
+            {
+              text: "Kode itu seperti humor. Ketika Anda harus menjelaskannya, itu buruk.",
+              source: "- Cory House",
+            },
+            {
+              text: "Cara terbaik untuk memprediksi masa depan adalah dengan menciptakannya.",
+              source: "- Peter Drucker",
+            },
+            {
+              text: "Pemrograman bukan tentang apa yang Anda ketahui; ini tentang apa yang bisa Anda temukan.",
+              source: "- Chris Pine",
+            },
+            {
+              text: "Siapa pun bisa menulis kode yang dimengerti komputer. Programmer hebat menulis kode yang mudah dipahami manusia.",
+              source: "- Martin Fowler",
+            },
+            {
+              text: "Fotografi adalah cerita yang gagal saya ungkapkan dengan kata-kata.",
+              source: "- Destin Sparks",
+            },
+            {
+              text: "Sebuah gambar adalah rahasia tentang rahasia, semakin banyak yang diceritakan semakin sedikit yang Anda ketahui.",
+              source: "- Diane Arbus",
+            },
+            {
+              text: "Dalam fotografi, ada realitas yang begitu halus sehingga menjadi lebih nyata daripada realitas itu sendiri.",
+              source: "- Alfred Stieglitz",
+            },
+            {
+              text: "Kekayaan terbesar adalah hidup puas dengan sedikit.",
+              source: "- Plato",
+            },
+            {
+              text: "Perjalanan seribu mil dimulai dengan satu langkah.",
+              source: "- Lao Tzu",
+            },
+            {
+              text: "Kesuksesan bukanlah akhir, kegagalan bukanlah fatal: Yang penting adalah keberanian untuk terus melanjutkan.",
+              source: "- Winston Churchill",
+            },
+            {
+              text: "Kebahagiaan tidak datang dengan sendirinya. Itu berasal dari tindakan Anda sendiri.",
+              source: "- Dalai Lama",
+            },
+            {
+              text: "Barang siapa bertakwa kepada Allah, niscaya Dia akan memberinya jalan keluar.",
+              source: "(Al-Qur'an, Surah At-Talaq, 65:2)",
+            },
+            {
+              text: "Ingatlah kepada-Ku, Aku akan mengingatmu. Bersyukurlah kepada-Ku, dan jangan mengingkari-Ku.",
+              source: "(Al-Qur'an, Surah Al-Baqarah, 2:152)",
+            },
+            {
+              text: "Sesungguhnya Allah tidak akan mengubah nasib suatu kaum sampai mereka mengubah diri mereka sendiri.",
+              source: "(Al-Qur'an, Surah Ar-Ra'd, 13:11)",
+            },
+            {
+              text: "Dan mintalah pertolongan dengan sabar dan salat. Sungguh, itu sangat berat kecuali bagi orang-orang yang khusyuk.",
+              source: "(Al-Qur'an, Surah Al-Baqarah, 2:45)",
+            },
+            {
+              text: "Wahai manusia, kamu semua adalah fakir terhadap Allah; dan Allah, Dia-lah Yang Maha Kaya lagi Maha Terpuji.",
+              source: "(Al-Qur'an, Surah Fatir, 35:15)",
+            },
+            {
+              text: "Manfaatkan lima perkara sebelum datang lima perkara: masa mudamu sebelum masa tuamu, kesehatanmu sebelum sakitmu, kekayaanmu sebelum kefakiranmu, waktu luangmu sebelum kesibukanmu, dan hidupmu sebelum matimu.",
+              source: "(Hadis, riwayat Ibnu Abbas, Al-Hakim)",
+            },
+            {
+              text: "Janganlah kamu bersedih, sesungguhnya kamu akan menang jika kamu orang-orang yang beriman.",
+              source: "(Al-Qur'an, Surah Ali Imran, 3:139)",
+            },
+            {
+              text: "Seorang hamba akan tetap berdiri pada Hari Kiamat sampai dia ditanya tentang waktunya dan bagaimana dia menggunakannya.",
+              source: "(Hadis, riwayat At-Tirmidhi)",
+            },
+            {
+              text: "Hijrah bukan tentang meninggalkan negerimu, tapi meninggalkan apa yang dilarang oleh Allah.",
+              source: "- Syaikh Ibnu Baz",
+            },
+            {
+              text: "Sesungguhnya orang-orang yang beriman, orang-orang yang berhijrah dan berjihad di jalan Allah, mereka itu mengharapkan rahmat Allah.",
+              source: "(Al-Qur'an, Surah Al-Baqarah, 2:218)",
+            },
+          ],
+          programming: [
+            {
+              text: "Satu-satunya cara untuk melakukan pekerjaan hebat adalah mencintai apa yang Anda lakukan.",
+              source: "- Steve Jobs",
+            },
+            {
+              text: "Waktu Anda terbatas, jangan sia-siakan dengan menjalani hidup orang lain.",
+              source: "- Steve Jobs",
+            },
+            {
+              text: "Kode itu seperti humor. Ketika Anda harus menjelaskannya, itu buruk.",
+              source: "- Cory House",
+            },
+            {
+              text: "Cara terbaik untuk memprediksi masa depan adalah dengan menciptakannya.",
+              source: "- Peter Drucker",
+            },
+            {
+              text: "Pemrograman bukan tentang apa yang Anda ketahui; ini tentang apa yang bisa Anda temukan.",
+              source: "- Chris Pine",
+            },
+            {
+              text: "Siapa pun bisa menulis kode yang dimengerti komputer. Programmer hebat menulis kode yang mudah dipahami manusia.",
+              source: "- Martin Fowler",
+            },
+          ],
+          photography: [
+            {
+              text: "Fotografi adalah cerita yang gagal saya ungkapkan dengan kata-kata.",
+              source: "- Destin Sparks",
+            },
+            {
+              text: "Sebuah gambar adalah rahasia tentang rahasia, semakin banyak yang diceritakan semakin sedikit yang Anda ketahui.",
+              source: "- Diane Arbus",
+            },
+            {
+              text: "Dalam fotografi, ada realitas yang begitu halus sehingga menjadi lebih nyata daripada realitas itu sendiri.",
+              source: "- Alfred Stieglitz",
+            },
+          ],
+          selfDevelopment: [
+            {
+              text: "Kekayaan terbesar adalah hidup puas dengan sedikit.",
+              source: "- Plato",
+            },
+            {
+              text: "Perjalanan seribu mil dimulai dengan satu langkah.",
+              source: "- Lao Tzu",
+            },
+            {
+              text: "Kesuksesan bukanlah akhir, kegagalan bukanlah fatal: Yang penting adalah keberanian untuk terus melanjutkan.",
+              source: "- Winston Churchill",
+            },
+            {
+              text: "Kebahagiaan tidak datang dengan sendirinya. Itu berasal dari tindakan Anda sendiri.",
+              source: "- Dalai Lama",
+            },
+            {
+              text: "Percayalah bahwa Anda bisa, dan Anda sudah setengah jalan.",
+              source: "- Theodore Roosevelt",
+            },
+          ],
+          hijrah: [
+            {
+              text: "Barang siapa bertakwa kepada Allah, niscaya Dia akan memberinya jalan keluar.",
+              source: "(Al-Qur'an, Surah At-Talaq, 65:2)",
+            },
+            {
+              text: "Ingatlah kepada-Ku, Aku akan mengingatmu. Bersyukurlah kepada-Ku, dan jangan mengingkari-Ku.",
+              source: "(Al-Qur'an, Surah Al-Baqarah, 2:152)",
+            },
+            {
+              text: "Sesungguhnya Allah tidak akan mengubah nasib suatu kaum sampai mereka mengubah diri mereka sendiri.",
+              source: "(Al-Qur'an, Surah Ar-Ra'd, 13:11)",
+            },
+            {
+              text: "Dan mintalah pertolongan dengan sabar dan salat. Sungguh, itu sangat berat kecuali bagi orang-orang yang khusyuk.",
+              source: "(Al-Qur'an, Surah Al-Baqarah, 2:45)",
+            },
+            {
+              text: "Wahai manusia, kamu semua adalah fakir terhadap Allah; dan Allah, Dia-lah Yang Maha Kaya lagi Maha Terpuji.",
+              source: "(Al-Qur'an, Surah Fatir, 35:15)",
+            },
+            {
+              text: "Manfaatkan lima perkara sebelum datang lima perkara: masa mudamu sebelum masa tuamu, kesehatanmu sebelum sakitmu, kekayaanmu sebelum kefakiranmu, waktu luangmu sebelum kesibukanmu, dan hidupmu sebelum matimu.",
+              source: "(Hadis, riwayat Ibnu Abbas, Al-Hakim)",
+            },
+            {
+              text: "Janganlah kamu bersedih, sesungguhnya kamu akan menang jika kamu orang-orang yang beriman.",
+              source: "(Al-Qur'an, Surah Ali Imran, 3:139)",
+            },
+            {
+              text: "Seorang hamba akan tetap berdiri pada Hari Kiamat sampai dia ditanya tentang waktunya dan bagaimana dia menggunakannya.",
+              source: "(Hadis, riwayat At-Tirmidhi)",
+            },
+            {
+              text: "Hijrah bukan tentang meninggalkan negerimu, tapi meninggalkan apa yang dilarang oleh Allah.",
+              source: "- Syaikh Ibnu Baz",
+            },
+            {
+              text: "Sesungguhnya orang-orang yang beriman, orang-orang yang berhijrah dan berjihad di jalan Allah, mereka itu mengharapkan rahmat Allah.",
+              source: "(Al-Qur'an, Surah Al-Baqarah, 2:218)",
+            },
+          ],
+        },
+      };
+
+      let currentLanguage = "en";
+      let currentCategory = "all";
+      let currentQuote = getRandomQuote(); // Store the current quote
+
+      const quoteDisplay = document.getElementById("quoteDisplay");
+      const quoteText = document.getElementById("quoteText");
+      const quoteSource = document.getElementById("quoteSource");
+      const newQuoteButton = document.getElementById("newQuote");
+      const languageToggle = document.getElementById("languageToggle");
+      const copyQuote = document.getElementById("copyQuote");
+      const shareTwitter = document.getElementById("shareTwitter");
+      const shareWhatsApp = document.getElementById("shareWhatsApp");
+      const shareInstagram = document.getElementById("shareInstagram");
+      const title = document.getElementById("title");
+      const actionButtons = document.getElementById("actionButtons");
+      const categorySelect = document.getElementById("categorySelect");
+
+      function getRandomQuote() {
+        const currentQuotes = quotes[currentLanguage][currentCategory];
+        return currentQuotes[Math.floor(Math.random() * currentQuotes.length)];
+      }
+
+      function displayQuote({ text, source }) {
+        quoteText.textContent = text;
+        quoteSource.textContent = source;
+        actionButtons.style.display = "flex"; // Show action buttons after generating a quote
+      }
+
+      function displayNewQuote() {
+        quoteDisplay.style.opacity = '0';
+        setTimeout(() => {
+          currentQuote = getRandomQuote(); // Get a new quote
+          displayQuote(currentQuote);
+          quoteDisplay.style.opacity = '1';
+        }, 200);
+      }
+
+      function toggleLanguage() {
+        currentLanguage = currentLanguage === "en" ? "id" : "en";
+        languageToggle.textContent = currentLanguage.toUpperCase();
+        title.textContent = "Quote Generator";
+        displayQuote(currentQuote); // Display the current quote in the new language
+      }
+
+      function copyToClipboard() {
+        const fullQuote = `${quoteText.textContent} ${quoteSource.textContent}`;
+        navigator.clipboard.writeText(fullQuote).then(() => {
+          alert("Quote copied to clipboard!");
+        });
+      }
+
+      function shareToTwitter() {
+        const tweetText = encodeURIComponent(
+          `${quoteText.textContent} ${quoteSource.textContent} - Check out this awesome quote generator at https://yourwebsite.com!`
+        );
+        window.open(
+          `https://twitter.com/intent/tweet?text=${tweetText}`,
+          "_blank"
+        );
+      }
+
+      function shareToWhatsApp() {
+        const whatsappText = encodeURIComponent(
+          `${quoteText.textContent} ${quoteSource.textContent} - Check out this awesome quote generator at https://yourwebsite.com!`
+        );
+        window.open(
+          `https://api.whatsapp.com/send?text=${whatsappText}`,
+          "_blank"
+        );
+      }
+
+      function shareToInstagram() {
+        alert(
+          "Instagram sharing is not supported directly. Please copy the quote and share it on Instagram."
+        );
+      }
+
+      newQuoteButton.addEventListener("click", displayNewQuote);
+      languageToggle.addEventListener("click", toggleLanguage);
+      copyQuote.addEventListener("click", copyToClipboard);
+      shareTwitter.addEventListener("click", shareToTwitter);
+      shareWhatsApp.addEventListener("click", shareToWhatsApp);
+      shareInstagram.addEventListener("click", shareToInstagram);
+      categorySelect.addEventListener("change", (e) => {
+        currentCategory = e.target.value;
+        currentQuote = getRandomQuote(); // Get a new quote based on category
+        displayQuote(currentQuote);
+      });
+
+      // Initial quote display
+      displayQuote(currentQuote);
+    </script>
+  </body>
+</html>
