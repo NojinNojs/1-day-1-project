@@ -31,6 +31,10 @@ This project consists of a series of daily projects, each with a specific focus 
    - Description: A web application that generates inspiring quotes from various categories and allows users to share them on social media.
    - Technologies: HTML, CSS (Tailwind CSS), JavaScript
    - [Link to Project](Pemula-1-20/day-5-Random-Quote-Generator)
+6. **Day 6: Login Page**
+   - Description: A simple login page built using PHP and Bootstrap that allows users to enter their credentials and checks them against predefined static values.
+   - Technologies: PHP, HTML, CSS, Bootstrap
+   - [Link to Project](Pemula-1-20/day-6-Login-Page)
 
 ## How to Use
 1. Clone this repository:
