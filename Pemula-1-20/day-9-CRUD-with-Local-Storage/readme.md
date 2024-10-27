@@ -6,8 +6,6 @@ Certainly! Here's the enhanced `README.md` file, rewritten entirely in English:
 
 A modern, responsive web application implementing CRUD (Create, Read, Update, Delete) functionalities using JavaScript and Local Storage. This application helps users manage simple data like task lists, notes, or contacts with an elegant dark mode interface.
 
-![Application Screenshot](https://imgur.com/a/ZkFNKIy)
-
 ## Features
 
 - **Dark Mode Design**: A modern, elegant dark theme with a primary color scheme of white text on a dark background for a comfortable user experience.
