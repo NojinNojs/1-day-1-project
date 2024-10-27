@@ -48,6 +48,13 @@ $projects = [
         "description" => "A project that allows users to fill out a contact form, which sends an email using PHP after validating the input.",
         "technologies" => "PHP, HTML, CSS, JavaScript",
         "link" => "Pemula-1-20/day-7-Simple-Contact-Form"
+    ],
+    [
+        "day" => 8,
+        "title" => "Temperature Converter",
+        "description" => "A sleek and modern temperature converter web application built with JavaScript, TailwindCSS, and DaisyUI.",
+        "technologies" => "HTML, CSS, JavaScript, TailwindCSS, DaisyUI",
+        "link" => "Pemula-1-20/day-8-Temperature-Converter"
     ]
 ];
 ?>
