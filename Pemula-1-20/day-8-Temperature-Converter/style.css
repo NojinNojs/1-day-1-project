@@ -1,0 +1,31 @@
+.glassmorphis {
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  background-color: rgba(28, 25, 25, 0.49);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+}
+
+/* Dark Background */
+.bg-dark {
+  background-color: #1a1a2e;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+/* SVG Animation */
+svg circle {
+  animation: pulse 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    r: 40;
+    opacity: 0.3;
+  }
+  50% {
+    r: 70;
+    opacity: 0.7;
+  }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Converter</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.19.0/dist/full.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark relative overflow-hidden min-h-screen flex items-center justify-center">
+
+  <!-- SVG Animation Background -->
+  <div class="absolute inset-0 -z-10">
+    <svg class="opacity-10 w-full h-full animate-pulse" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <circle cx="50" cy="50" r="50" fill="url(#grad1)" />
+      <defs>
+        <radialgradient id="grad1" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" style="stop-color: #6e44ff; stop-opacity: 1" />
+          <stop offset="100%" style="stop-color: #232323; stop-opacity: 0" />
+        </radialgradient>
+      </defs>
+    </svg>
+  </div>
+
+  <!-- Main Glassmorphism Container -->
+  <div class="glassmorphis p-8 w-full max-w-lg text-white relative z-10 m-2">
+    <h1 class="text-3xl font-bold text-center mb-8">Temperature Converter</h1>
+
+    <!-- Input Temperature -->
+    <div class="mb-6">
+      <label for="inputValue" class="block font-semibold mb-2">Enter Temperature:</label>
+      <input type="number" id="inputValue" class="input input-bordered w-full bg-transparent placeholder-gray-400" placeholder="e.g., 100">
+    </div>
+
+    <!-- Input Unit -->
+    <div class="mb-6">
+      <label for="inputUnit" class="block font-semibold mb-2">Select Input Unit:</label>
+      <select id="inputUnit" class="select select-bordered w-full bg-transparent">
+        <option value="celsius" class="text-black">Celsius</option>
+        <option value="fahrenheit" class="text-black">Fahrenheit</option>
+        <option value="kelvin" class="text-black">Kelvin</option>
+      </select>
+    </div>
+
+    <!-- Output Unit -->
+    <div class="mb-6">
+      <label for="outputUnit" class="block font-semibold mb-2">Select Output Unit:</label>
+      <select id="outputUnit" class="select select-bordered w-full bg-transparent">
+        <option value="celsius" class="text-black">Celsius</option>
+        <option value="fahrenheit" class="text-black">Fahrenheit</option>
+        <option value="kelvin" class="text-black">Kelvin</option>
+      </select>
+    </div>
+
+    <!-- Convert Button -->
+    <button onclick="convertTemperature()" class="btn btn-primary w-full">
+      Convert
+    </button>
+
+    <!-- Result Display -->
+    <div id="result" class="mt-8 text-center text-2xl font-semibold"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
