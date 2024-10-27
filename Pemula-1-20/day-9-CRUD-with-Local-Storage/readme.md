@@ -1,7 +1,3 @@
-Certainly! Here's the enhanced `README.md` file, rewritten entirely in English:
-
----
-
 # Simple CRUD Application with JavaScript and Local Storage
 
 A modern, responsive web application implementing CRUD (Create, Read, Update, Delete) functionalities using JavaScript and Local Storage. This application helps users manage simple data like task lists, notes, or contacts with an elegant dark mode interface.
