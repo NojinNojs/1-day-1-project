@@ -41,6 +41,13 @@ $projects = [
         "description" => "A simple login page built using PHP and Bootstrap that allows users to enter their credentials and checks them against predefined static values.",
         "technologies" => "PHP, HTML, CSS (Bootstrap)",
         "link" => "Pemula-1-20/day-6-Login-Page"
+    ],
+    [
+        "day" => 7,
+        "title" => "Simple Contact Form",
+        "description" => "A project that allows users to fill out a contact form, which sends an email using PHP after validating the input.",
+        "technologies" => "PHP, HTML, CSS, JavaScript",
+        "link" => "Pemula-1-20/day-7-Simple-Contact-Form"
     ]
 ];
 ?>
