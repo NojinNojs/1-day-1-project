@@ -35,6 +35,10 @@ This project consists of a series of daily projects, each with a specific focus 
    - Description: A simple login page built using PHP and Bootstrap that allows users to enter their credentials and checks them against predefined static values.
    - Technologies: PHP, HTML, CSS, Bootstrap
    - [Link to Project](Pemula-1-20/day-6-Login-Page)
+7. **Day 7: Simple Contact Form**
+   - Description: A project that allows users to fill out a contact form, which sends an email using PHP after validating the input.
+   - Technologies: PHP, HTML, CSS, JavaScript
+   - [Link to Project](Pemula-1-20/day-7-Simple-Contact-Form)
 
 ## How to Use
 1. Clone this repository:
