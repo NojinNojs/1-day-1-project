@@ -1,0 +1,21 @@
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #2c2c2c;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+/* Notifikasi */
+.alert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1050;
+}

@@ -55,6 +55,13 @@ $projects = [
         "description" => "A sleek and modern temperature converter web application built with JavaScript, TailwindCSS, and DaisyUI.",
         "technologies" => "HTML, CSS, JavaScript, TailwindCSS, DaisyUI",
         "link" => "Pemula-1-20/day-8-Temperature-Converter"
+    ],
+    [
+        "day" => 9,
+        "title" => "CRUD with Local Storage",
+        "description" => "A simple CRUD application with JavaScript and Local Storage.",
+        "technologies" => "HTML, CSS, Bootstrap, JavaScript",
+        "link" => "Pemula-1-20/day-9-CRUD-with-Local-Storage"
     ]
 ];
 ?>

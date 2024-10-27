@@ -43,6 +43,10 @@ This project consists of a series of daily projects, each with a specific focus 
    - Description: A sleek and modern temperature converter web application built with JavaScript, TailwindCSS, and DaisyUI.
    - Technologies: HTML, CSS, JavaScript, TailwindCSS, DaisyUI
    - [Link to Project](Pemula-1-20/day-8-Temperature-Converter)
+9. **Day 9: CRUD with Local Storage**
+   - Description: A simple CRUD application with JavaScript and Local Storage.
+   - Technologies: HTML, CSS, Bootstrap, JavaScript
+   - [Link to Project](Pemula-1-20/day-9-CRUD-with-Local-Storage)
 
 ## How to Use
 1. Clone this repository:
