@@ -1,0 +1,4 @@
+# Start Generation Here
+.env
+vendor/
+# End Generation Here
