@@ -69,8 +69,13 @@ $projectsToDisplay = array_slice($filteredProjects, $offset, $perPage);
         }
     </script>
     <style>
+        html {
+            overscroll-behavior: none;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
+            overscroll-behavior: none;
         }
 
         .carousel-container {

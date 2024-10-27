@@ -33,8 +33,14 @@ include 'list-projects.php';
         }
     </script>
     <style>
+        html {
+            scroll-behavior: smooth;
+            overscroll-behavior: none;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
+            overscroll-behavior: none;
         }
 
         .carousel-container {
