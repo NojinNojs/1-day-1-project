@@ -53,7 +53,7 @@ This project consists of a series of daily projects, each with a specific focus 
 10. **Day 10: File Uploa   d**
    - Description: A simple file upload feature using PHP.
    - Technologies: PHP, HTML, CSS, JavaScript
-- [Link to Project](Pemula-1-20/day-10-File-Upload)
+   - [Link to Project](Pemula-1-20/day-10-File-Upload)
 
 ## How to Use
 
