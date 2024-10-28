@@ -13,7 +13,7 @@ include 'list-projects.php';
     <!-- Primary Meta Tags -->
     <meta name="title" content="1 Day 1 Project - Daily Programming Projects">
     <meta name="description" content="Enhance your programming skills with daily coding projects. Learn web development through hands-on experience with HTML, CSS, JavaScript, PHP and more.">
-    <meta name="keywords" content="1 day 1 project, Nojin, programming projects, coding practice, web development, daily coding, learn programming, HTML, CSS, JavaScript, PHP">
+    <meta name="keywords" content="1 day 1 project, Nojin, programming projects, coding practice, web development, daily coding, learn programming, HTML, CSS, JavaScript, PHP, Raffi Aqsan, Raffi 1 day 1 project">
     <meta name="author" content="NojinNojs">
 
     <!-- Open Graph / Facebook -->
