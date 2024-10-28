@@ -8,7 +8,31 @@ include 'list-projects.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1 Day 1 Project</title>
+    <title>1 Day 1 Project - Daily Programming Projects</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="1 Day 1 Project - Daily Programming Projects">
+    <meta name="description" content="Enhance your programming skills with daily coding projects. Learn web development through hands-on experience with HTML, CSS, JavaScript, PHP and more.">
+    <meta name="keywords" content="1 day 1 project, Nojin, programming projects, coding practice, web development, daily coding, learn programming, HTML, CSS, JavaScript, PHP">
+    <meta name="author" content="NojinNojs">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/NojinNojs/1-day-1-project">
+    <meta property="og:title" content="1 Day 1 Project - Daily Programming Projects">
+    <meta property="og:description" content="Enhance your programming skills with daily coding projects. Learn web development through hands-on experience with HTML, CSS, JavaScript, PHP and more.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/NojinNojs/1-day-1-project/main/preview.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://github.com/NojinNojs/1-day-1-project">
+    <meta property="twitter:title" content="1 Day 1 Project - Daily Programming Projects">
+    <meta property="twitter:description" content="Enhance your programming skills with daily coding projects. Learn web development through hands-on experience with HTML, CSS, JavaScript, PHP and more.">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/NojinNojs/1-day-1-project/main/preview.png">
+
+    <!-- Discord -->
+    <meta name="theme-color" content="#4F46E5">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
