@@ -1,14 +1,17 @@
 # 1 Day 1 Project
 
 ## Description
+
 **1 Day 1 Project** is an initiative aimed at enhancing programming skills by completing small projects on a daily basis. Each project is designed to introduce and implement various concepts and technologies in software development.
 
 ## Objectives
+
 - Improve programming and software development skills.
 - Explore a variety of technologies and frameworks.
 - Build a project portfolio that showcases technical abilities.
 
 ## Project Structure
+
 This project consists of a series of daily projects, each with a specific focus and goal. Below is a list of completed projects:
 
 1. **Day 1: Hello World**
@@ -47,12 +50,13 @@ This project consists of a series of daily projects, each with a specific focus 
    - Description: A simple CRUD application with JavaScript and Local Storage.
    - Technologies: HTML, CSS, Bootstrap, JavaScript
    - [Link to Project](Pemula-1-20/day-9-CRUD-with-Local-Storage)
-10. **Day 10: File Upload**
+10. **Day 10: File Uploa   d**
    - Description: A simple file upload feature using PHP.
    - Technologies: PHP, HTML, CSS, JavaScript
-   - [Link to Project](Pemula-1-20/day-10-File-Upload)
+- [Link to Project](Pemula-1-20/day-10-File-Upload)
 
 ## How to Use
+
 1. Clone this repository:
    ```bash
    git clone https://github.com/NojinNojs/1-day-1-project.git
@@ -64,9 +68,11 @@ This project consists of a series of daily projects, each with a specific focus 
 3. Open the relevant files in your browser or local server.
 
 ## Contributions
+
 Contributions are highly welcomed! Please fork this repository, create a new branch, and submit a pull request for any projects you wish to add or improve.
 
 ## License
+
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for more details.
 
 Thank you for visiting this repository! Happy learning and creating!
