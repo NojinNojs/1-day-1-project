@@ -62,6 +62,13 @@ $projects = [
         "description" => "A simple CRUD application with JavaScript and Local Storage.",
         "technologies" => "HTML, CSS, Bootstrap, JavaScript",
         "link" => "Pemula-1-20/day-9-CRUD-with-Local-Storage"
+    ],
+    [
+        "day" => 10,
+        "title" => "File Upload",
+        "description" => "A simple file upload feature using PHP.",
+        "technologies" => "PHP, HTML, CSS, JavaScript",
+        "link" => "Pemula-1-20/day-10-File-Upload"
     ]
 ];
 ?>
