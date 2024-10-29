@@ -154,16 +154,6 @@
         transform: translateY(-1px);
       }
 
-      .btn-pause {
-        background: #f59e0b;
-        color: white;
-      }
-
-      .btn-pause:hover {
-        background: #d97706;
-        transform: translateY(-1px);
-      }
-
       .page {
         display: none;
         animation: fadeIn 0.3s ease;
@@ -290,10 +280,10 @@
         <div class="control-buttons d-flex justify-content-center">
           <button
             class="btn-control btn-start"
-            id="startBtn"
+            id="startPauseBtn"
             onclick="toggleTimer()"
           >
-            <i class="fas fa-play"></i>
+            <i class="fas fa-pause" id="startPauseIcon"></i>
           </button>
           <button class="btn-control btn-delete" onclick="deleteTimer()">
             <i class="fas fa-trash"></i>
@@ -384,14 +374,22 @@
       }
 
       function toggleTimer() {
-        const startBtn = document.getElementById("startBtn");
+        const startPauseBtn = document.getElementById("startPauseBtn");
+        const startPauseIcon = document.getElementById("startPauseIcon");
         if (timerId) {
           pauseTimer();
-          startBtn.innerHTML = '<i class="fas fa-play"></i>';
+          startPauseIcon.classList.remove("fa-pause");
+          startPauseIcon.classList.add("fa-play");
         } else {
           startTimer();
-          startBtn.innerHTML = '<i class="fas fa-pause"></i>';
+          startPauseIcon.classList.remove("fa-play");
+          startPauseIcon.classList.add("fa-pause");
         }
+      }
+
+      function pauseTimer() {
+        clearInterval(timerId);
+        timerId = null;
       }
 
       function deleteTimer() {
