@@ -8,27 +8,32 @@ include 'list-projects.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1 Day 1 Project - Daily Programming Projects</title>
+    <title>Nojin 1 Day 1 Project</title>
 
     <!-- Primary Meta Tags -->
-    <meta name="title" content="1 Day 1 Project - Daily Programming Projects">
-    <meta name="description" content="Enhance your programming skills with daily coding projects. Learn web development through hands-on experience with HTML, CSS, JavaScript, PHP and more.">
-    <meta name="keywords" content="1 day 1 project, Nojin, programming projects, coding practice, web development, daily coding, learn programming, HTML, CSS, JavaScript, PHP, Raffi Aqsan, Raffi 1 day 1 project">
+    <meta name="title" content="Nojin 1 Day 1 Project">
+    <meta name="description"
+        content="Enhance nojin programming skills with daily coding projects. Learn web development through hands-on experience with HTML, CSS, JavaScript, PHP and more.">
+    <meta name="keywords"
+        content="1 day 1 project, Nojin, my projects, coding practice, web development, daily coding, learn programming, HTML, CSS, JavaScript, PHP, Nojin 1 Day 1 Project">
     <meta name="author" content="NojinNojs">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://github.com/NojinNojs/1-day-1-project">
-    <meta property="og:title" content="1 Day 1 Project - Daily Programming Projects">
-    <meta property="og:description" content="Enhance your programming skills with daily coding projects. Learn web development through hands-on experience with HTML, CSS, JavaScript, PHP and more.">
+    <meta property="og:title" content="Nojin 1 Day 1 Project">
+    <meta property="og:description"
+        content="Enhance Nojin programming skills with daily coding projects. Learn web development through hands-on experience with HTML, CSS, JavaScript, PHP and more.">
     <meta property="og:image" content="https://raw.githubusercontent.com/NojinNojs/1-day-1-project/main/preview.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://github.com/NojinNojs/1-day-1-project">
-    <meta property="twitter:title" content="1 Day 1 Project - Daily Programming Projects">
-    <meta property="twitter:description" content="Enhance your programming skills with daily coding projects. Learn web development through hands-on experience with HTML, CSS, JavaScript, PHP and more.">
-    <meta property="twitter:image" content="https://raw.githubusercontent.com/NojinNojs/1-day-1-project/main/preview.png">
+    <meta property="twitter:title" content="My Daily Programming Projects">
+    <meta property="twitter:description"
+        content="Enhance my programming skills with daily coding projects. Learn web development through hands-on experience with HTML, CSS, JavaScript, PHP and more.">
+    <meta property="twitter:image"
+        content="https://raw.githubusercontent.com/NojinNojs/1-day-1-project/main/preview.png">
 
     <!-- Discord -->
     <meta name="theme-color" content="#4F46E5">
@@ -106,33 +111,34 @@ include 'list-projects.php';
         <div data-aos="fade-up"
             class="mb-8 p-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg shadow-lg text-white">
             <h2 class="text-4xl font-bold mb-4"><i class="fas fa-star"></i> 1 Day 1 Project</h2>
-            <p class="mb-4 text-lg">Welcome to the <strong>1 Day 1 Project</strong>, an exciting initiative designed to
-                supercharge your programming skills! <i class="fas fa-rocket"></i> By engaging in small, daily projects, you'll not only learn but
+            <p class="mb-4 text-lg">Welcome to my <strong>1 Day 1 Project</strong>, an exciting initiative designed to
+                supercharge my programming skills! <i class="fas fa-rocket"></i> By engaging in small, daily projects,
+                I'll not only learn but
                 also apply various concepts and technologies that are essential in the world of software development.
             </p>
-            <p class="mb-4 text-lg">Join us in this journey of creativity and innovation, where each day brings a new
+            <p class="mb-4 text-lg">Join me in this journey of creativity and innovation, where each day brings a new
                 challenge and opportunity to grow!</p>
         </div>
 
         <div data-aos="fade-up" class="mb-8">
-            <h3 class="text-3xl font-bold mt-8 mb-4"><i class="fas fa-bullseye"></i> Our Ambitious Objectives</h3>
+            <h3 class="text-3xl font-bold mt-8 mb-4"><i class="fas fa-bullseye"></i> My Ambitious Objectives</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-white rounded-lg shadow-lg p-4 transition-transform transform hover:scale-105">
-                    <h4 class="text-xl font-semibold mb-2"><i class="fas fa-tools"></i> Enhance Skills</h4>
-                    <p>Improve your programming and software development skills through hands-on experience.</p>
+                    <h4 class="text-xl font-semibold mb-2"><i class="fas fa-tools"></i> Enhance My Skills</h4>
+                    <p>Improve my programming and software development skills through hands-on experience.</p>
                 </div>
                 <div class="bg-white rounded-lg shadow-lg p-4 transition-transform transform hover:scale-105">
-                    <h4 class="text-xl font-semibold mb-2"><i class="fas fa-globe"></i> Explore Technologies</h4>
-                    <p>Dive into a diverse array of technologies and frameworks to broaden your expertise.</p>
+                    <h4 class="text-xl font-semibold mb-2"><i class="fas fa-globe"></i> Explore New Technologies</h4>
+                    <p>Dive into a diverse array of technologies and frameworks to broaden my expertise.</p>
                 </div>
                 <div class="bg-white rounded-lg shadow-lg p-4 transition-transform transform hover:scale-105">
-                    <h4 class="text-xl font-semibold mb-2"><i class="fas fa-folder"></i> Build Portfolio</h4>
-                    <p>Create a compelling project portfolio that highlights your technical prowess and creativity.</p>
+                    <h4 class="text-xl font-semibold mb-2"><i class="fas fa-folder"></i> Build My Portfolio</h4>
+                    <p>Create a compelling project portfolio that highlights my technical prowess and creativity.</p>
                 </div>
             </div>
         </div>
 
-        <h2 class="text-3xl font-bold mb-8" id="projects" data-aos="fade-up">Completed Projects</h2>
+        <h2 class="text-3xl font-bold mb-8" id="projects" data-aos="fade-up">My Completed Projects</h2>
 
         <div class="flex flex-col space-y-4 pb-4" data-aos="fade-up">
             <?php
@@ -157,18 +163,19 @@ include 'list-projects.php';
                 </div>
             <?php } ?>
             <div class="text-center mt-4">
-                <a href="projects.php" class="btn bg-black text-white transition-transform transform hover:scale-105">View All
-                    Projects</a>
+                <a href="projects.php"
+                    class="btn bg-black text-white transition-transform transform hover:scale-105">View All
+                    My Projects</a>
             </div>
 
 
-        <footer class="footer footer-center p-4 text-base-content mt-16">
-            <p>Copyright &copy; <?= date("Y") ?> NojinNojs. All rights reserved.</p>
-        </footer>
+            <footer class="footer footer-center p-4 text-base-content mt-16">
+                <p>Copyright &copy; <?= date("Y") ?> NojinNojs. All rights reserved.</p>
+            </footer>
 
-        <script>
-            AOS.init();
-        </script>
+            <script>
+                AOS.init();
+            </script>
 </body>
 
 </html>
