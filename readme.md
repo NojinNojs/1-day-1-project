@@ -58,6 +58,10 @@ This project consists of a series of daily projects, each with a specific focus 
    - Description: A digital clock that displays the current time using JavaScript.
    - Technologies: HTML, CSS, JavaScript
    - [Link to Project](Pemula-1-20/day-11-Digital-Clock)
+12. **Day 12: Countdown Timer**
+   - Description: A simple countdown timer application built with JavaScript.
+   - Technologies: HTML, CSS, JavaScript
+   - [Link to Project](Pemula-1-20/day-12-Countdown-Timer)
 
 ## How to Use
 

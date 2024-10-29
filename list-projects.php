@@ -76,6 +76,13 @@ $projects = [
         "description" => "A digital clock that displays the current time using JavaScript.",
         "technologies" => "HTML, CSS, JavaScript",
         "link" => "Pemula-1-20/day-11-Digital-Clock"
+    ],
+    [
+        "day" => 12,
+        "title" => "Countdown Timer",
+        "description" => "A simple countdown timer application built with JavaScript.",
+        "technologies" => "HTML, CSS, JavaScript",
+        "link" => "Pemula-1-20/day-12-Countdown-Timer"
     ]
 ];
 ?>
