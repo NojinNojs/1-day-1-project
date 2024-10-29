@@ -69,6 +69,13 @@ $projects = [
         "description" => "A simple file upload feature using PHP.",
         "technologies" => "PHP, HTML, CSS, JavaScript",
         "link" => "Pemula-1-20/day-10-File-Upload"
+    ],
+    [
+        "day" => 11,
+        "title" => "Digital Clock",
+        "description" => "A digital clock that displays the current time using JavaScript.",
+        "technologies" => "HTML, CSS, JavaScript",
+        "link" => "Pemula-1-20/day-11-Digital-Clock"
     ]
 ];
 ?>

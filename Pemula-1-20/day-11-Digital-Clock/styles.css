@@ -1,0 +1,132 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f6f8fb 0%, #e9f0f8 100%);
+  transition: all 0.5s ease;
+  min-height: 100vh;
+}
+
+.clock-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  max-width: 550px;
+  width: 92%;
+  backdrop-filter: blur(10px);
+}
+
+#clock-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 25px;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  padding: 2.5rem !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+}
+
+.greeting {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 2rem;
+  letter-spacing: -0.5px;
+}
+
+.time {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  letter-spacing: clamp(2px, 0.8vw, 3px);
+  color: #0f172a;
+  margin: 1rem 0;
+  font-weight: 500;
+  word-break: break-word;
+  line-height: 1.2;
+}
+
+.date {
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: #64748b;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  letter-spacing: 0.5px;
+}
+
+.btn-switch {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: all 0.4s ease;
+  border: none;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 15px rgba(30, 41, 59, 0.15);
+}
+
+.btn-switch:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(30, 41, 59, 0.25);
+  background: linear-gradient(135deg, #334155 0%, #475569 100%);
+}
+
+.dark-mode {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: white;
+}
+
+.dark-mode .clock-container {
+  background: rgba(30, 41, 59, 0.9);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode #clock-card {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(51, 65, 85, 0.6);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .greeting {
+  color: #f1f5f9;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .time {
+  color: #f8fafc;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode .date {
+  color: #cbd5e1;
+}
+
+.dark-mode .btn-switch {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  color: #0f172a;
+  box-shadow: 0 4px 15px rgba(241, 245, 249, 0.15);
+}
+
+.dark-mode .btn-switch:hover {
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+  box-shadow: 0 8px 20px rgba(241, 245, 249, 0.25);
+}
+
+@media screen and (max-width: 480px) {
+  .clock-container {
+    padding: 1.5rem;
+    width: 95%;
+  }
+  
+  #clock-card {
+    padding: 1.5rem !important;
+  }
+  
+  .time {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    letter-spacing: 2px;
+  }
+  
+  .btn-switch {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
