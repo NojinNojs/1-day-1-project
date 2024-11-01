@@ -83,6 +83,13 @@ $projects = [
         "description" => "A simple countdown timer application built with JavaScript.",
         "technologies" => "HTML, CSS, JavaScript",
         "link" => "Pemula-1-20/day-12-Countdown-Timer"
+    ],
+    [
+        "day" => 13,
+        "title" => "Basic Math Quiz",
+        "description" => "A simple math quiz application built with PHP, JavaScript, and Bootstrap.",
+        "technologies" => "PHP, JavaScript, Bootstrap, HTML, CSS",
+        "link" => "Pemula-1-20/day-13-Basic-Math-Quiz"
     ]
 ];
 ?>

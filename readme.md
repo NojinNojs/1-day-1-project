@@ -62,6 +62,10 @@ This project consists of a series of daily projects, each with a specific focus 
    - Description: A simple countdown timer application built with JavaScript.
    - Technologies: HTML, CSS, JavaScript
    - [Link to Project](Pemula-1-20/day-12-Countdown-Timer)
+13. **Day 13: Basic Math Quiz**
+   - Description: A simple math quiz application built with PHP, JavaScript, and Bootstrap.
+   - Technologies: PHP, JavaScript, Bootstrap, HTML, CSS
+   - [Link to Project](Pemula-1-20/day-13-Basic-Math-Quiz)
 
 ## How to Use
 

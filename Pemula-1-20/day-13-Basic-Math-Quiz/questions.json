@@ -1,0 +1,74 @@
+[
+    {
+        "question": "What is 5 + 7?",
+        "options": ["10", "11", "12", "13"],
+        "answer": 2,
+        "difficulty": "easy"
+    },
+    {
+        "question": "What is 15 - 8?",
+        "options": ["5", "6", "7", "8"],
+        "answer": 2,
+        "difficulty": "easy"
+    },
+    {
+        "question": "What is 9 x 6?",
+        "options": ["54", "64", "74", "84"],
+        "answer": 0,
+        "difficulty": "medium"
+    },
+    {
+        "question": "What is 81 ÷ 9?",
+        "options": ["7", "8", "9", "10"],
+        "answer": 2,
+        "difficulty": "medium"
+    },
+    {
+        "question": "What is the square root of 144?",
+        "options": ["10", "11", "12", "13"],
+        "answer": 2,
+        "difficulty": "hard"
+    },
+    {
+        "question": "What is 2^5?",
+        "options": ["16", "32", "64", "128"],
+        "answer": 1,
+        "difficulty": "hard"
+    },
+    {
+        "question": "What is 10 + 15?",
+        "options": ["20", "25", "30", "35"],
+        "answer": 1,
+        "difficulty": "easy"
+    },
+    {
+        "question": "What is 20 - 5?",
+        "options": ["10", "15", "20", "25"],
+        "answer": 1,
+        "difficulty": "easy"
+    },
+    {
+        "question": "What is 12 x 12?",
+        "options": ["120", "122", "144", "132"],
+        "answer": 2,
+        "difficulty": "medium"
+    },
+    {
+        "question": "What is 144 ÷ 12?",
+        "options": ["10", "11", "12", "13"],
+        "answer": 2,
+        "difficulty": "medium"
+    },
+    {
+        "question": "What is the cube root of 27?",
+        "options": ["2", "3", "4", "5"],
+        "answer": 1,
+        "difficulty": "hard"
+    },
+    {
+        "question": "What is 3^4?",
+        "options": ["27", "81", "64", "100"],
+        "answer": 1,
+        "difficulty": "hard"
+    }
+]
