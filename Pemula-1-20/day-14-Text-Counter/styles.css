@@ -1,0 +1,74 @@
+/* General Body Styling */
+body {
+    background-color: #F5F7FA;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* App Title */
+.app-title {
+    font-weight: bold;
+    color: #4A90E2;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* Custom Card Styling */
+.custom-card {
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Textarea Styling */
+.input-group {
+    border: 1px solid #E0E4E8;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.input-group-text {
+    background-color: #4A90E2;
+    color: #fff;
+}
+
+textarea.form-control {
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 1rem;
+}
+
+/* Statistics */
+.stat {
+    font-size: 1rem;
+    color: #4A90E2;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stat i {
+    color: #50E3C2;
+}
+
+/* Responsive Layout */
+@media (max-width: 576px) {
+    .stat {
+        flex-direction: column;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+    
+    .app-title {
+        font-size: 1.5rem;
+    }
+    
+    textarea.form-control {
+        font-size: 0.9rem;
+    }
+}

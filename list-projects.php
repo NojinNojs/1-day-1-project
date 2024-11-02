@@ -90,6 +90,13 @@ $projects = [
         "description" => "A simple math quiz application built with PHP, JavaScript, and Bootstrap.",
         "technologies" => "PHP, JavaScript, Bootstrap, HTML, CSS",
         "link" => "Pemula-1-20/day-13-Basic-Math-Quiz"
+    ],
+    [
+        "day" => 14,
+        "title" => "Text Counter",
+        "description" => "A simple text counter application built with HTML, CSS, JavaScript, and Local Storage.",
+        "technologies" => "HTML, CSS, JavaScript, Local Storage",
+        "link" => "Pemula-1-20/day-14-Text-Counter"
     ]
 ];
 ?>

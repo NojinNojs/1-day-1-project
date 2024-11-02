@@ -66,6 +66,10 @@ This project consists of a series of daily projects, each with a specific focus 
    - Description: A simple math quiz application built with PHP, JavaScript, and Bootstrap.
    - Technologies: PHP, JavaScript, Bootstrap, HTML, CSS
    - [Link to Project](Pemula-1-20/day-13-Basic-Math-Quiz)
+14. **Day 14: Text Counter**
+   - Description: A simple text counter application built with HTML, CSS, JavaScript, and Local Storage.
+   - Technologies: HTML, CSS, JavaScript, Local Storage
+   - [Link to Project](Pemula-1-20/day-14-Text-Counter)
 
 ## How to Use
 
