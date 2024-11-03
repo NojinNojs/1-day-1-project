@@ -70,6 +70,10 @@ This project consists of a series of daily projects, each with a specific focus 
    - Description: A simple text counter application built with HTML, CSS, JavaScript, and Local Storage.
    - Technologies: HTML, CSS, JavaScript, Local Storage
    - [Link to Project](Pemula-1-20/day-14-Text-Counter)
+15. **Day 15: Fetch API Example**
+   - Description: A simple Fetch API example built with PHP and JavaScript.
+   - Technologies: PHP, JavaScript
+   - [Link to Project](Pemula-1-20/day-15-Fetch-API-Example)
 
 ## How to Use
 

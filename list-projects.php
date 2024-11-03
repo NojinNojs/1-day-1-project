@@ -97,6 +97,13 @@ $projects = [
         "description" => "A simple text counter application built with HTML, CSS, JavaScript, and Local Storage.",
         "technologies" => "HTML, CSS, JavaScript, Local Storage",
         "link" => "Pemula-1-20/day-14-Text-Counter"
+    ],
+    [
+        "day" => 15,
+        "title" => "Fetch API Example",
+        "description" => "A simple Fetch API example built with PHP and JavaScript.",
+        "technologies" => "PHP, JavaScript",
+        "link" => "Pemula-1-20/day-15-Fetch-API-Example"
     ]
 ];
 ?>
