@@ -111,6 +111,13 @@ $projects = [
         "description" => "A simple Rock, Paper, Scissors game built with HTML, CSS, and JavaScript.",
         "technologies" => "HTML, CSS, JavaScript",
         "link" => "Pemula-1-20/day-16-rock-paper-scissors"
+    ],
+    [
+        "day" => 17,
+        "title" => "Task Reminder",
+        "description" => "A simple task reminder application built with PHP.",
+        "technologies" => "PHP",
+        "link" => "Pemula-1-20/day-17-PHP-Session-and-Cookies"
     ]
 ];
 ?>

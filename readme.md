@@ -78,6 +78,10 @@ This project consists of a series of daily projects, each with a specific focus 
    - Description: A simple Rock, Paper, Scissors game built with HTML, CSS, and JavaScript.
    - Technologies: HTML, CSS, JavaScript
    - [Link to Project](Pemula-1-20/day-16-rock-paper-scissors)
+17. **Day 17: Task Reminder**
+   - Description: A simple task reminder application built with PHP.
+   - Technologies: PHP
+   - [Link to Project](Pemula-1-20/day-17-PHP-Session-and-Cookies)
 
 ## How to Use
 
