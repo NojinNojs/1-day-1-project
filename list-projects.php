@@ -104,6 +104,13 @@ $projects = [
         "description" => "A simple Fetch API example built with PHP and JavaScript.",
         "technologies" => "PHP, JavaScript",
         "link" => "Pemula-1-20/day-15-Fetch-API-Example"
+    ],
+    [
+        "day" => 16,
+        "title" => "Rock, Paper, Scissors Game",
+        "description" => "A simple Rock, Paper, Scissors game built with HTML, CSS, and JavaScript.",
+        "technologies" => "HTML, CSS, JavaScript",
+        "link" => "Pemula-1-20/day-16-rock-paper-scissors"
     ]
 ];
 ?>

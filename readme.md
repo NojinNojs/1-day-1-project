@@ -74,6 +74,10 @@ This project consists of a series of daily projects, each with a specific focus 
    - Description: A simple Fetch API example built with PHP and JavaScript.
    - Technologies: PHP, JavaScript
    - [Link to Project](Pemula-1-20/day-15-Fetch-API-Example)
+16. **Day 16: Rock, Paper, Scissors Game**
+   - Description: A simple Rock, Paper, Scissors game built with HTML, CSS, and JavaScript.
+   - Technologies: HTML, CSS, JavaScript
+   - [Link to Project](Pemula-1-20/day-16-rock-paper-scissors)
 
 ## How to Use
 
