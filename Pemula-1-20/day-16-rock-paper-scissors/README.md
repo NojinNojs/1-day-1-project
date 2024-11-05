@@ -14,7 +14,7 @@ The Rock, Paper, Scissors game is a classic hand game that is often played betwe
 - **JavaScript**: For game logic and interactivity.
 
 ## Live Demo
-Experience the game live at [this link]().
+Experience the game live at [this link](https://1-day-1-project.nojinjourney.com/Pemula-1-20/day-16-rock-paper-scissors/).
 
 ## Acknowledgments
 This project was inspired by the challenge provided by Frontend Mentor, which offers a platform for developers to improve their skills through real-world projects.
