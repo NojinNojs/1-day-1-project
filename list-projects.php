@@ -118,6 +118,13 @@ $projects = [
         "description" => "A simple task reminder application built with PHP.",
         "technologies" => "PHP",
         "link" => "Pemula-1-20/day-17-PHP-Session-and-Cookies"
+    ],
+    [
+        "day" => 18,
+        "title" => "Currency Converter",
+        "description" => "A currency converter application built with PHP and the Exchange Rate API.",
+        "technologies" => "PHP, Exchange Rate API",
+        "link" => "Pemula-1-20/day-18-Currency-Converter"
     ]
 ];
 ?>
