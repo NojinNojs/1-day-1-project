@@ -55,7 +55,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="mb-3">
                         <label for="amount" class="form-label">Amount</label>
                         <input type="text" class="form-control" id="amount" name="amount"
-                            value="<?= $amount ? format_number($amount) : '' ?>" placeholder="Enter amount" required>
+                            value="<?= isset($amount) && $amount !== null ? format_number($amount) : '' ?>"
+                            placeholder="Enter amount" required pattern="[0-9.,]*" inputmode="decimal"
+                            onkeypress="return isNumberKey(event)">
                     </div>
                     <div class="row">
                         <div class="col-md-6 mb-3">
@@ -117,16 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.getElementById('amount').addEventListener('input', function (e) {
-            let value = e.target.value.replace(/\./g, '').replace(/,/g, '.');
-            if (!isNaN(value)) {
-                let parts = value.split('.');
-                parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-                e.target.value = parts.join(',');
-            }
-        });
-    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
