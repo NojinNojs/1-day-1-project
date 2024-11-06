@@ -93,6 +93,11 @@ This project consists of a series of daily projects, each with a specific focus 
    - Technologies: PHP, Exchange Rate API
    - [Link to Project](Pemula-1-20/day-18-Currency-Converter)
 
+19. **Day 19: Random Password Generator**
+   - Description: A random password generator application built with JavaScript.
+   - Technologies: JavaScript
+   - [Link to Project](Pemula-1-20/day-19-Random-Password-Generator)
+
 ## How to Use
 
 1. Clone this repository:

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-pattern">
+    <div class="noise-overlay"></div>
+    
+    <main class="container">
+        <!-- Main Generator Card -->
+        <div class="password-container">
+            <!-- Header Section -->
+            <header class="generator-header">
+                <div class="logo-animation">
+                    <svg class="shield-icon" viewBox="0 0 24 24">
+                        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12v4.7c0 4.67-3.13 8.96-7 10.18-3.87-1.22-7-5.51-7-10.18V6.3l7-3.12z"/>
+                        <path class="shield-checkmark" d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/>
+                    </svg>
+                </div>
+                <h1 class="app-title">Random Password Generator</h1>
+                <p class="app-description">Generate secure, random passwords instantly</p>
+            </header>
+
+            <!-- Password Display Section -->
+            <section class="password-display-section">
+                <div class="password-field">
+                    <input type="text" id="passwordOutput" readonly class="password-output" value="Click generate to create password">
+                    <div class="password-actions">
+                        <button class="action-btn refresh-btn" onclick="generatePassword()" title="Generate New Password">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                        <button class="action-btn copy-btn" onclick="copyToClipboard()" title="Copy to Clipboard">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Password Strength Indicator -->
+                <div class="strength-meter">
+                    <div class="strength-title">
+                        <span>Password Strength</span>
+                        <span class="strength-label" id="strengthLabel">Strong</span>
+                    </div>
+                    <div class="strength-indicator">
+                        <div class="bar" id="strengthBar"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Password Options Section -->
+            <section class="password-options">
+                <!-- Length Selector -->
+                <div class="option-group length-selector">
+                    <div class="option-header">
+                        <label for="passwordLength">Password Length</label>
+                        <span class="length-value" id="lengthValue">12</span>
+                    </div>
+                    <div class="slider-container">
+                        <input type="range" 
+                               class="password-length-slider" 
+                               id="passwordLength" 
+                               min="8" 
+                               max="32" 
+                               value="12">
+                        <div class="slider-labels">
+                            <span>8</span>
+                            <span>20</span>
+                            <span>32</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Character Types -->
+                <div class="option-group character-types">
+                    <h3 class="option-title">Character Types</h3>
+                    <div class="checkbox-grid">
+                        <div class="custom-checkbox">
+                            <input type="checkbox" id="uppercaseCheck" checked>
+                            <label for="uppercaseCheck">
+                                <i class="fas fa-font"></i>
+                                <span>Uppercase Letters</span>
+                            </label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input type="checkbox" id="lowercaseCheck" checked>
+                            <label for="lowercaseCheck">
+                                <i class="fas fa-font fa-sm"></i>
+                                <span>Lowercase Letters</span>
+                            </label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input type="checkbox" id="numbersCheck" checked>
+                            <label for="numbersCheck">
+                                <i class="fas fa-hashtag"></i>
+                                <span>Numbers</span>
+                            </label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input type="checkbox" id="symbolsCheck" checked>
+                            <label for="symbolsCheck">
+                                <i class="fas fa-at"></i>
+                                <span>Symbols</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Generate Button -->
+            <button class="generate-btn" onclick="generatePassword()">
+                <i class="fas fa-key"></i>
+                <span>Generate Password</span>
+            </button>
+        </div>
+    </main>
+
+    <!-- Notification Toast -->
+    <div class="toast-container">
+        <div class="toast" id="copyToast" role="alert">
+            <div class="toast-content">
+                <i class="fas fa-check-circle"></i>
+                <span>Password copied to clipboard!</span>
+            </div>
+            <div class="toast-progress"></div>
+        </div>
+    </div>
+
+    <!-- Modal for Password History -->
+    <div class="modal fade" id="historyModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Password History</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="password-history-list" id="passwordHistory"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

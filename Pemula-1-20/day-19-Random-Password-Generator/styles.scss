@@ -1,0 +1,446 @@
+// Variables
+$primary-color: #00ff9d;
+$secondary-color: #00cc7d; 
+$dark-color: #121212;
+$darker-color: #1e1e1e;
+$light-color: #e0e0e0;
+$danger-color: #ff4444;
+$warning-color: #ffbb33;
+$success-color: #00C851;
+$transition-speed: 0.2s;
+
+// Mixins
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin hover-effect {
+    transition: all $transition-speed ease;
+    &:hover {
+        transform: scale(1.02);
+        filter: brightness(1.2);
+    }
+}
+
+// Global Styles
+body {
+    min-height: 100vh;
+    background: $dark-color;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: $light-color;
+    position: relative;
+    overflow-x: hidden;
+    padding: 1rem;
+}
+
+// Main Container
+.password-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+// Header Styles
+.generator-header {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    .logo-animation {
+        @include flex-center;
+        margin-bottom: 1rem;
+
+        .shield-icon {
+            width: 60px;
+            height: 60px;
+            fill: $primary-color;
+            animation: pulse 2s infinite;
+
+            .shield-checkmark {
+                transform-origin: center;
+                animation: checkmark 1s ease-out forwards;
+            }
+        }
+    }
+
+    .app-title {
+        color: $primary-color;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    .app-description {
+        color: $light-color;
+        opacity: 0.8;
+        font-size: 1rem;
+    }
+}
+
+// Password Display Section
+.password-display-section {
+    margin-bottom: 2rem;
+
+    .password-field {
+        position: relative;
+        margin-bottom: 1rem;
+
+        .password-output {
+            width: 100%;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 1.2rem;
+            background: $darker-color;
+            border: 1px solid rgba($primary-color, 0.3);
+            border-radius: 6px;
+            color: $primary-color;
+            transition: all $transition-speed ease;
+            cursor: text;
+
+            &:focus {
+                outline: none;
+                border-color: $primary-color;
+                box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+            }
+        }
+
+        .password-actions {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            gap: 0.5rem;
+
+            .action-btn {
+                @include hover-effect;
+                background: none;
+                border: none;
+                color: $primary-color;
+                padding: 0.5rem;
+                cursor: pointer;
+                border-radius: 4px;
+                width: 35px;
+                height: 35px;
+                @include flex-center;
+
+                &:hover {
+                    background: rgba($primary-color, 0.1);
+                }
+
+                &.refresh-btn i {
+                    transition: transform 0.3s ease;
+                }
+
+                &.refresh-btn:hover i {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+}
+
+// Strength Meter
+.strength-meter {
+    margin-bottom: 2rem;
+    background: $darker-color;
+    padding: 1rem;
+    border-radius: 6px;
+
+    .strength-title {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+        color: $light-color;
+
+        .strength-label {
+            font-weight: 600;
+            &.weak { color: $danger-color; }
+            &.medium { color: $warning-color; }
+            &.strong { color: $success-color; }
+        }
+    }
+
+    .strength-indicator {
+        height: 6px;
+        background: rgba($light-color, 0.1);
+        border-radius: 3px;
+        overflow: hidden;
+
+        .bar {
+            height: 100%;
+            width: 0;
+            transition: all $transition-speed ease;
+            border-radius: 3px;
+            background: $primary-color;
+        }
+    }
+}
+
+// Options Section
+.password-options {
+    background: $darker-color;
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 2rem;
+
+    .option-group {
+        margin-bottom: 1.5rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .option-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+
+            label {
+                font-weight: 600;
+                color: $light-color;
+            }
+
+            .length-value {
+                background: $primary-color;
+                color: $dark-color;
+                padding: 0.2rem 0.6rem;
+                border-radius: 4px;
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
+
+// Slider Styles
+.slider-container {
+    position: relative;
+    padding: 0.5rem 0;
+
+    .password-length-slider {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 4px;
+        background: rgba($light-color, 0.1);
+        border-radius: 2px;
+        outline: none;
+        transition: all $transition-speed ease;
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: $primary-color;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all $transition-speed ease;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    .slider-labels {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.5rem;
+        font-size: 0.8rem;
+        color: $light-color;
+        opacity: 0.7;
+    }
+}
+
+// Checkbox Grid
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+
+    .custom-checkbox {
+        position: relative;
+
+        input[type="checkbox"] {
+            display: none;
+
+            & + label {
+                display: flex;
+                align-items: center;
+                padding: 0.8rem;
+                background: rgba($light-color, 0.05);
+                border: 1px solid rgba($primary-color, 0.3);
+                border-radius: 6px;
+                cursor: pointer;
+                transition: all $transition-speed ease;
+
+                i {
+                    color: $primary-color;
+                    margin-right: 0.8rem;
+                    font-size: 1.1rem;
+                }
+
+                span {
+                    font-size: 0.9rem;
+                    color: $light-color;
+                }
+            }
+
+            &:checked + label {
+                background: rgba($primary-color, 0.2);
+                border-color: $primary-color;
+            }
+        }
+    }
+}
+
+// Generate Button
+.generate-btn {
+    @include hover-effect;
+    width: 100%;
+    padding: 1rem;
+    background: $primary-color;
+    color: $dark-color;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+
+    i {
+        font-size: 1.2rem;
+    }
+
+    &:hover {
+        background: lighten($primary-color, 5%);
+    }
+}
+
+// Toast Notification
+.toast-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+
+    .toast {
+        background: $darker-color;
+        padding: 1rem 1.5rem;
+        border-radius: 6px;
+        margin-bottom: 1rem;
+        border: 1px solid rgba($primary-color, 0.3);
+        animation: slideInRight 0.3s ease-out;
+
+        .toast-content {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: $light-color;
+
+            i {
+                color: $success-color;
+                font-size: 1.2rem;
+            }
+        }
+
+        .toast-progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            background: $primary-color;
+            border-radius: 0 0 6px 6px;
+            animation: progress 2s linear forwards;
+        }
+    }
+}
+
+// Animations
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes progress {
+    from { width: 100%; }
+    to { width: 0%; }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes checkmark {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+// Responsive Adjustments
+@media (max-width: 768px) {
+    .password-container {
+        margin: 0;
+        padding: 1rem;
+    }
+
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .generator-header {
+        .app-title {
+            font-size: 1.5rem;
+        }
+    }
+
+    .password-field .password-output {
+        font-size: 0.9rem;
+    }
+
+    .toast-container {
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        
+        .toast {
+            margin: 0;
+        }
+    }
+}

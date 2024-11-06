@@ -125,6 +125,13 @@ $projects = [
         "description" => "A currency converter application built with PHP and the Exchange Rate API.",
         "technologies" => "PHP, Exchange Rate API",
         "link" => "Pemula-1-20/day-18-Currency-Converter"
+    ],
+    [
+        "day" => 19,
+        "title" => "Random Password Generator",
+        "description" => "A random password generator application built with JavaScript.",
+        "technologies" => "JavaScript",
+        "link" => "Pemula-1-20/day-19-Random-Password-Generator"
     ]
 ];
 ?>

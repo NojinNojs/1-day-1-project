@@ -1,0 +1,570 @@
+body {
+  min-height: 100vh;
+  background: #121212;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: #e0e0e0;
+  position: relative;
+  overflow-x: hidden;
+  padding: 1rem;
+}
+
+.password-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.generator-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.generator-header .logo-animation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.generator-header .logo-animation .shield-icon {
+  width: 60px;
+  height: 60px;
+  fill: #00ff9d;
+  -webkit-animation: pulse 2s infinite;
+          animation: pulse 2s infinite;
+}
+
+.generator-header .logo-animation .shield-icon .shield-checkmark {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-animation: checkmark 1s ease-out forwards;
+          animation: checkmark 1s ease-out forwards;
+}
+
+.generator-header .app-title {
+  color: #00ff9d;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.generator-header .app-description {
+  color: #e0e0e0;
+  opacity: 0.8;
+  font-size: 1rem;
+}
+
+.password-display-section {
+  margin-bottom: 2rem;
+}
+
+.password-display-section .password-field {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.password-display-section .password-field .password-output {
+  width: 100%;
+  padding: 1rem;
+  font-family: 'Courier New', monospace;
+  font-size: 1.2rem;
+  background: #1e1e1e;
+  border: 1px solid rgba(0, 255, 157, 0.3);
+  border-radius: 6px;
+  color: #00ff9d;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  cursor: text;
+}
+
+.password-display-section .password-field .password-output:focus {
+  outline: none;
+  border-color: #00ff9d;
+  -webkit-box-shadow: 0 0 0 2px rgba(0, 255, 157, 0.2);
+          box-shadow: 0 0 0 2px rgba(0, 255, 157, 0.2);
+}
+
+.password-display-section .password-field .password-actions {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.password-display-section .password-field .password-actions .action-btn {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background: none;
+  border: none;
+  color: #00ff9d;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 35px;
+  height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.password-display-section .password-field .password-actions .action-btn:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-filter: brightness(1.2);
+          filter: brightness(1.2);
+}
+
+.password-display-section .password-field .password-actions .action-btn:hover {
+  background: rgba(0, 255, 157, 0.1);
+}
+
+.password-display-section .password-field .password-actions .action-btn.refresh-btn i {
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.password-display-section .password-field .password-actions .action-btn.refresh-btn:hover i {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.strength-meter {
+  margin-bottom: 2rem;
+  background: #1e1e1e;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.strength-meter .strength-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #e0e0e0;
+}
+
+.strength-meter .strength-title .strength-label {
+  font-weight: 600;
+}
+
+.strength-meter .strength-title .strength-label.weak {
+  color: #ff4444;
+}
+
+.strength-meter .strength-title .strength-label.medium {
+  color: #ffbb33;
+}
+
+.strength-meter .strength-title .strength-label.strong {
+  color: #00C851;
+}
+
+.strength-meter .strength-indicator {
+  height: 6px;
+  background: rgba(224, 224, 224, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.strength-meter .strength-indicator .bar {
+  height: 100%;
+  width: 0;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  border-radius: 3px;
+  background: #00ff9d;
+}
+
+.password-options {
+  background: #1e1e1e;
+  padding: 1.5rem;
+  border-radius: 6px;
+  margin-bottom: 2rem;
+}
+
+.password-options .option-group {
+  margin-bottom: 1.5rem;
+}
+
+.password-options .option-group:last-child {
+  margin-bottom: 0;
+}
+
+.password-options .option-group .option-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.password-options .option-group .option-header label {
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+.password-options .option-group .option-header .length-value {
+  background: #00ff9d;
+  color: #121212;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.slider-container {
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.slider-container .password-length-slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 100%;
+  height: 4px;
+  background: rgba(224, 224, 224, 0.1);
+  border-radius: 2px;
+  outline: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.slider-container .password-length-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #00ff9d;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.slider-container .password-length-slider::-webkit-slider-thumb:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.slider-container .slider-labels {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #e0e0e0;
+  opacity: 0.7;
+}
+
+.checkbox-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(180px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.checkbox-grid .custom-checkbox {
+  position: relative;
+}
+
+.checkbox-grid .custom-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-grid .custom-checkbox input[type="checkbox"] + label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.8rem;
+  background: rgba(224, 224, 224, 0.05);
+  border: 1px solid rgba(0, 255, 157, 0.3);
+  border-radius: 6px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.checkbox-grid .custom-checkbox input[type="checkbox"] + label i {
+  color: #00ff9d;
+  margin-right: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.checkbox-grid .custom-checkbox input[type="checkbox"] + label span {
+  font-size: 0.9rem;
+  color: #e0e0e0;
+}
+
+.checkbox-grid .custom-checkbox input[type="checkbox"]:checked + label {
+  background: rgba(0, 255, 157, 0.2);
+  border-color: #00ff9d;
+}
+
+.generate-btn {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  width: 100%;
+  padding: 1rem;
+  background: #00ff9d;
+  color: #121212;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.8rem;
+}
+
+.generate-btn:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-filter: brightness(1.2);
+          filter: brightness(1.2);
+}
+
+.generate-btn i {
+  font-size: 1.2rem;
+}
+
+.generate-btn:hover {
+  background: #1affa7;
+}
+
+.toast-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+.toast-container .toast {
+  background: #1e1e1e;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(0, 255, 157, 0.3);
+  -webkit-animation: slideInRight 0.3s ease-out;
+          animation: slideInRight 0.3s ease-out;
+}
+
+.toast-container .toast .toast-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.8rem;
+  color: #e0e0e0;
+}
+
+.toast-container .toast .toast-content i {
+  color: #00C851;
+  font-size: 1.2rem;
+}
+
+.toast-container .toast .toast-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: #00ff9d;
+  border-radius: 0 0 6px 6px;
+  -webkit-animation: progress 2s linear forwards;
+          animation: progress 2s linear forwards;
+}
+
+@-webkit-keyframes slideUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes slideInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes progress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+@keyframes progress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes checkmark {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes checkmark {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .password-container {
+    margin: 0;
+    padding: 1rem;
+  }
+  .checkbox-grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .generator-header .app-title {
+    font-size: 1.5rem;
+  }
+  .password-field .password-output {
+    font-size: 0.9rem;
+  }
+  .toast-container {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+  .toast-container .toast {
+    margin: 0;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
