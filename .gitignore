@@ -1,4 +1,5 @@
 # Start Generation Here
 .env
 vendor/
+node_modules/
 # End Generation Here

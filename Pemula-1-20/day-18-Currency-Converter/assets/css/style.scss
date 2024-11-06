@@ -1,0 +1,107 @@
+// Modern color scheme
+$primary-color: #4361ee;
+$secondary-color: #3f37c9;
+$accent-color: #4895ef;
+$background-color: #f8f9fa;
+$text-color: #2b2d42;
+$border-radius: 1rem;
+$transition-speed: 0.3s;
+
+// Modern gradient mixin
+@mixin gradient-background {
+  background: linear-gradient(135deg, $primary-color, $accent-color);
+}
+
+body {
+  background-color: $background-color;
+  min-height: 100vh;
+  color: $text-color;
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  padding: 3rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: $primary-color;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  background: linear-gradient(to right, $primary-color, $accent-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card {
+  border-radius: $border-radius;
+  border: none;
+  background: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: all $transition-speed ease;
+  backdrop-filter: blur(10px);
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(67, 97, 238, 0.15);
+  }
+
+  .card-title {
+    color: $primary-color;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .card-body {
+    padding: 2rem;
+  }
+}
+
+.btn-primary {
+  @include gradient-background;
+  border: none;
+  border-radius: $border-radius;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all $transition-speed ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+    background: linear-gradient(135deg, darken($primary-color, 5%), darken($accent-color, 5%));
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Modern form styling
+.form-control, .form-select {
+  border-radius: $border-radius;
+  border: 2px solid #e9ecef;
+  padding: 0.75rem 1rem;
+  transition: all $transition-speed ease;
+  
+  &:focus {
+    border-color: $accent-color;
+    box-shadow: 0 0 0 3px rgba(72, 149, 239, 0.1);
+  }
+}
+
+// Alert styling
+.alert {
+  border-radius: $border-radius;
+  border: none;
+  padding: 1.25rem;
+  
+  &.alert-success {
+    background: rgba(72, 149, 239, 0.1);
+    color: $primary-color;
+  }
+}

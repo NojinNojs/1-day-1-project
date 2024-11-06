@@ -62,26 +62,36 @@ This project consists of a series of daily projects, each with a specific focus 
    - Description: A simple countdown timer application built with JavaScript.
    - Technologies: HTML, CSS, JavaScript
    - [Link to Project](Pemula-1-20/day-12-Countdown-Timer)
+
 13. **Day 13: Basic Math Quiz**
    - Description: A simple math quiz application built with PHP, JavaScript, and Bootstrap.
    - Technologies: PHP, JavaScript, Bootstrap, HTML, CSS
    - [Link to Project](Pemula-1-20/day-13-Basic-Math-Quiz)
+
 14. **Day 14: Text Counter**
    - Description: A simple text counter application built with HTML, CSS, JavaScript, and Local Storage.
    - Technologies: HTML, CSS, JavaScript, Local Storage
    - [Link to Project](Pemula-1-20/day-14-Text-Counter)
+
 15. **Day 15: Fetch API Example**
    - Description: A simple Fetch API example built with PHP and JavaScript.
    - Technologies: PHP, JavaScript
    - [Link to Project](Pemula-1-20/day-15-Fetch-API-Example)
+
 16. **Day 16: Rock, Paper, Scissors Game**
    - Description: A simple Rock, Paper, Scissors game built with HTML, CSS, and JavaScript.
    - Technologies: HTML, CSS, JavaScript
    - [Link to Project](Pemula-1-20/day-16-rock-paper-scissors)
+
 17. **Day 17: Task Reminder**
    - Description: A simple task reminder application built with PHP.
    - Technologies: PHP
    - [Link to Project](Pemula-1-20/day-17-PHP-Session-and-Cookies)
+
+18. **Day 18: Currency Converter**
+   - Description: A currency converter application built with PHP and the Exchange Rate API.
+   - Technologies: PHP, Exchange Rate API
+   - [Link to Project](Pemula-1-20/day-18-Currency-Converter)
 
 ## How to Use
 
